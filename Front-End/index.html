@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page - Hello Shoes Pvt. Ltd</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/framework/css/bootstrap.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('assets/images/summer-accessories-board.jpg'); /* Add your background image path here */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+
+</head>
+<body>
+<section id="login">
+    <div class="login-container">
+        <h2>Login to Your Account</h2>
+        <form action="/submit-your-login-form" method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <a href="#"  id="forgetBtn" onclick="newPassword()">Forget password</a>
+            </div>
+            <button type="submit" class="button login-btn">Login</button>
+            <button type="button" class="button signup-btn" onclick="sign()">Sign Up</button>
+            <!--<button type="button" class="button logout-btn" onclick="location.href='logout-action-url';">--><!--Forget Password</button>-->
+
+        </form>
+    </div>
+</section>
+
+<section id="signup">
+    <div class="signup-container">
+        <h2>Sign Up Your Account</h2>
+        <form action="/submit-your-login-form" method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="sign-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="sign-password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="re-password">Re-Password:</label>
+                <input type="password" id="re-password" name="password" required>
+            </div>
+            <button type="submit" class="button login-btn" onclick="signsave()">Save</button>
+        </form>
+    </div>
+</section>
+
+<section id="forgetPassword">
+    <div class="signup-container">
+        <h2>ForgetPassword Your Account</h2>
+        <form action="/submit-your-login-form" method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="forget-email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Old-Password:</label>
+                <input type="password" id="forget-password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="re-password">New-Password:</label>
+                <input type="password" id="forgetRe-password" name="password" required>
+            </div>
+            <button type="submit" class="button login-btn" onclick="log()">Save</button>
+        </form>
+    </div>
+</section>
+
+
+<script src="assets/js/code.jquery.com_jquery-3.7.1.min.js"></script>
+<script src="assets/framework/js/bootstrap.js"></script>
+<script src="controller/DashboardController.js"></script>
+</body>
+</html>
