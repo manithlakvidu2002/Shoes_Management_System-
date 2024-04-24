@@ -45,7 +45,6 @@ input[type="email"], input[type="password"] {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 360px;
     text-align: center;
-    margin-left: 361px;
     padding-bottom: 43px;
 }
 .form-group {
@@ -85,7 +84,6 @@ h2{
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 360px;
     text-align: center;
-    margin-left: 361px;
     padding-bottom: 43px;
 }
 input[type="sign-email"], input[type="sign-password"] {
@@ -101,4 +99,8 @@ input[type="sign-email"], input[type="sign-password"] {
 
 #forgetBtn:hover{
     color: red;
+}
+#home{
+    display: flex;
+
 }
