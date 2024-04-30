@@ -1,9 +1,13 @@
 package lk.ijse.gdse66.HelloShoes.service;
 
-/**
- * @author: Manith Lakvidu,
- * @Runtime version: 11.0.11+9-b1341.60 amd64
- **/
+import lk.ijse.gdse66.HelloShoes.dto.CustomerDTO;
 
-public class CustomerService {
+import java.util.List;
+
+public interface CustomerService {
+    List<CustomerDTO> getAllCustomers();
+    CustomerDTO getCustomerDetails(String id);
+    CustomerDTO saveCustomer(CustomerDTO customerDTO);
+    void updateCustomer(String id, CustomerDTO customerDTO);
+    void deleteCustomer(String id);
 }
