@@ -29,6 +29,8 @@
 
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/Customer.css" rel="stylesheet">
+
 </head>
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
@@ -92,13 +94,215 @@
                             <span class="d-none d-lg-inline-flex">Manager</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="../pages/profile.html" class="dropdown-item">My Profile</a>
                             <!--<a href="#" class="dropdown-item">Settings</a>-->
                             <a href="../index.html" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
             </nav>
+
+
+            <!--Form Page Start-->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="page-header">
+                        <!--              <h3 class="page-title"> Form elements </h3>-->
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#" style="color: #009CFF">Admin</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Customers</li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                    <!--start of form-->
+
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6 col-xl-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <!--                    <h4 class="card-title">Default form</h4>-->
+                                    <!--                    <p class="card-description"> Basic form layout </p>-->
+                                    <form class="forms-sample">
+
+                                        <div class="form-group row">
+                                            <label for="cId" class="col-sm-3 col-form-label">code :</label>
+                                            <div class="col-sm-9">
+                                                <input disabled type="text" class="form-control " id="cId" placeholder="" style="background: transparent">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="cName" class="col-sm-3 col-form-label">Name :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="cName" placeholder="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="cEmail" class="col-sm-3 col-form-label">Email :</label>
+                                            <div class="col-sm-9">
+                                                <input type="email" class="form-control" id="cEmail" placeholder="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="cGender" class="col-sm-3 col-form-label">Gender :</label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control" id="cGender">
+                                                    <option selected>Choose...</option>
+                                                    <option>Male</option>
+                                                    <option>Female</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="cDob" class="col-sm-3 col-form-label">Date of Birth :</label>
+                                            <div class="col-sm-9">
+                                                <input type="date" class="form-control" id="cDob" name="dob">
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-6 col-xl-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <!--                    <h4 class="card-title">Horizontal Form</h4>-->
+                                    <!--                    <p class="card-description"> Horizontal form layout </p>-->
+                                    <form class="forms-sample">
+
+                                        <div class="form-group row">
+                                            <label for="cAddressLine" class="col-sm-3 col-form-label">Address :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="cAddressLine" placeholder="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="cStateCity" class="col-sm-3 col-form-label">City & State :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="cStateCity" placeholder="">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="cLoyaltyDate" class="col-sm-3 col-form-label">Loyalty Date :</label>
+                                            <div class="col-sm-9">
+                                                <input type="date" class="form-control" id="cLoyaltyDate" name="dob">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="cContact" class="col-sm-3 col-form-label">Contact :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="cContact" placeholder="">
+                                            </div>
+                                        </div>
+
+                                        <!--hidden text fields-->
+
+                                        <div style="display: none" class="form-group row">
+                                            <label for="cLevel" class="col-sm-3 col-form-label">Loyalty Level :</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="cLevel" placeholder="">
+                                            </div>
+                                        </div>
+
+                                        <div  style="display: none" class="form-group row">
+                                            <label for="cLoyaltyPoint" class="col-sm-3 col-form-label">Loyalty Points :</label>
+                                            <div class="col-sm-9">
+                                                <input  type="text" class="form-control" id="cLoyaltyPoint" placeholder="">
+                                            </div>
+                                        </div>
+
+                                        <div  style="display: none" class="form-group row">
+                                            <label for="cRecentDate" class="col-sm-3 col-form-label">Recent Date :</label>
+                                            <div class="col-sm-9">
+                                                <input  type="text" class="form-control" id="cRecentDate" placeholder="">
+                                            </div>
+                                        </div>
+
+                                        <!--end of hidden text fields-->
+
+                                        <div class="mt-4">
+                                            <button id="cSaveBtn" type="button" class="btn btn-primary mr-2 " style="background-color: #00d25b">Submit</button>
+                                            <button id="cUpdateBtn" type="button" class="btn btn-primary mr-2" style="background-color: #fc424a">Update</button>
+                                            <button id="cDeleteBtn" type="button" class="btn btn-primary mr-2" style="background-color: #ffab00">Delete</button>
+                                            <button id="cClearBtn" type="button" class="btn btn-dark" style="background-color: #8f5fe8">Clear</button>
+                                        </div>
+
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--end of form-->
+
+                    <!--table-->
+                    <div class="row ">
+                        <div class="col-12 grid-margin">
+                            <div class="card">
+                                <div class="card-header text-right" >
+
+                                    <div class="row">
+                                        <div class="col"></div>
+                                        <div class="col"></div>
+                                        <div class="col">
+                                            <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex  search">
+                                                <input id="cSearch" style="border-radius: 20px;background: transparent" type="text" class="form-control w-100" placeholder="Search Customers">
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="card-body">
+                                    <!--                    <h4 class="card-title font-weight-bold" style="color:#6c7293;">Registered Customers</h4>-->
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+
+                                                <th>#</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Contact</th>
+                                                <th>Date of birth</th>
+                                                <th>Gender</th>
+                                                <th>Address</th>
+                                                <th style="display: none">city and state</th>
+                                                <th>Loyalty Date</th>
+                                                <th>Loyalty Level</th>
+                                                <th>Loyalty Points</th>
+                                                <th>Recent Purchase Date</th>
+                                                <th style="display: none">Address New</th>
+
+                                            </tr>
+                                            </thead>
+                                            <tbody id="cTable">
+
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end of table-->
+
+                </div>
+                <!-- content-wrapper ends -->
+            </div>
+            <!--Form Page End-->
 
 
             <!-- Footer Start -->
@@ -117,9 +321,10 @@
             </div>
             <!-- Footer End -->
         </div>
-
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
     </div>
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
