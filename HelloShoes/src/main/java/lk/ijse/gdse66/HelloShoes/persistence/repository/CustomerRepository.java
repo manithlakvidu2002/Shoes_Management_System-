@@ -4,4 +4,7 @@ import lk.ijse.gdse66.HelloShoes.persistence.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CustomerRepository extends JpaRepository<Customer,String> {
+    Customer findByCustomerCode(String id);
+    Boolean existsByCustomerCode(String id);
+    void deleteByCustomerCode(String id);
 }

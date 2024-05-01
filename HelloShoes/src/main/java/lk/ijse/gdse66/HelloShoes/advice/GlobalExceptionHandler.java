@@ -25,7 +25,7 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(ServiceException.class)
-    public ResponseEntity<Map<String,Object>> handleServiceExecption(ServiceException exp){
+    public ResponseEntity<Map<String,Object>>handleServiceExecption(ServiceException exp){
         Map<String,Object> errorAttribute;
         if(exp instanceof DublicateRecordException){
             errorAttribute = getCommonError(HttpStatus.CONFLICT);

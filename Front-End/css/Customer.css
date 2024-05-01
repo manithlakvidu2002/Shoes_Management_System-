@@ -1,0 +1,84 @@
+/* Global Styles */
+/*body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}*/
+
+/* Main Panel Styles */
+.main-panel {
+    padding: 20px;
+}
+
+/* Page Header Styles */
+.page-header {
+    margin-bottom: 20px;
+}
+
+/* Breadcrumb Styles */
+.breadcrumb {
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+/* Form Styles */
+.forms-sample {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+/* Table Styles */
+
+
+
+
+
+/* Search Styles */
+.search {
+    position: relative;
+}
+
+.search input {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .col-sm-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
