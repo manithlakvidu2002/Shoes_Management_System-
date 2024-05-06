@@ -95,3 +95,8 @@
         padding: 10px 5px;
     }
 }
+.bi-arrow-up::before {
+    content: "\f148";
+    display: flex;
+    justify-content: center;
+}
