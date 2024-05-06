@@ -30,6 +30,38 @@
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/Employee.css" rel="stylesheet">
+
+    <style>
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .table th, .table td {
+            white-space: nowrap;
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        /* Optional: Adds zebra striping */
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0,0,0,.05);
+        }
+
+        @media (max-width: 768px) {
+            .table th, .table td {
+                padding: 10px 5px;
+            }
+        }
+
+    </style>
+
 </head>
 <body>
 <div class="container-xxl position-relative bg-white d-flex p-0">
@@ -83,7 +115,7 @@
                 <i class="fa fa-bars"></i>
             </a>
             <form class="d-none d-md-flex ms-4">
-                <input class="form-control border-0" type="search" placeholder="Search">
+                <input class="form-control border-0" id="search" type="search" style="margin-bottom: 0px " placeholder="Search">
             </form>
             <div class="navbar-nav align-items-center ms-auto">
 
@@ -102,243 +134,187 @@
         </nav>
 
         <!--Form Page Start-->
-        <div class="main-panel">
-            <div class="content-wrapper">
-                <div class="page-header">
+        <div class="container">
+            <div>
 
-
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#" style="color: #009CFF">Admin</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Employees</li>
-                        </ol>
-                    </nav>
+            <form class="row g-3 p-3 ">
+                <div class="details personal">
+                    <span class="title">Employee Details</span>
                 </div>
 
-                <!--start of forms-->
-
-                <div class="row">
-                    <div class="col-md-6 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-
-                                <form class="forms-sample">
-
-                                    <div class="form-group row">
-                                        <label for="eId" class="col-sm-3 col-form-label">Employee Id :</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="eId" placeholder="">
-                                        </div>
+                <div class="row col-12">
+                    <div class="form col-md-4">
+                        <div class="grid">
+                            <div class="form-element">
+                                <input type="file" id="file-1" accept="image/*" required>
+                                <label for="file-1" id="file-1-preview">
+                                    <img src="https://bit.ly/3ubuq5o" alt="" >
+                                    <div>
+                                        <span>+</span>
                                     </div>
-
-                                    <div class="form-group row">
-                                        <label for="eName" class="col-sm-3 col-form-label">Employee Name :</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="eName" placeholder="">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="eGender" class="col-sm-3 col-form-label">Gender :</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" id="eGender">
-                                                <option>Male</option>
-                                                <option>Female</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group row">
-                                        <label for="edOb" class="col-sm-3 col-form-label">Date of Birth:</label>
-                                        <div class="col-sm-9">
-                                            <input type="date" class="form-control" id="edOb">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="eStatus" class="col-sm-3 col-form-label">Civil Status :</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" id="eStatus">
-                                                <option>Single</option>
-                                                <option>Married</option>
-                                                <option>Divorced</option>
-                                                <option>Widowed</option>
-                                                <option>Separated</option>
-                                                <option>Remarried</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="eDesignation" class="col-sm-3 col-form-label">Designation :</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" id="eDesignation">
-                                                <option>Manager</option>
-                                                <option>Supervisor</option>
-                                                <option>Cashier</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="eJoinDate" class="col-sm-3 col-form-label">Date of Join:</label>
-                                        <div class="col-sm-9">
-                                            <input type="date" class="form-control" id="eJoinDate" name="dob">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group row">
-                                        <label for="eROle" class="col-sm-3 col-form-label">Access Role :</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" id="eROle">
-                                                <option>Admin</option>
-                                                <option>User</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-
-
-                                </form>
+                                </label>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
 
-                                    <form class="forms-sample">
-
-                                    <div class="form-group row">
-
-                                        <label class="col-sm-3 col-form-label">File upload :</label>
-                                        <input  id="eImage" type="file" name="img[]" class="file-upload-default">
-                                        <div class="input-group col-sm-9">
-                                            <input  type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                                            <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                          </span>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="eBranch" class="col-sm-3 col-form-label">Branch :</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" id="eBranch">
-                                                <option>Galle</option>
-                                                <option>Colombo</option>
-                                                <option>Matara</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="eEmail" class="col-sm-3 col-form-label">Email :</label>
-                                        <div class="col-sm-9">
-                                            <input type="email" class="form-control" id="eEmail" placeholder="">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="ePhone" class="col-sm-3 col-form-label">Mobile (phone) :</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="ePhone" placeholder="">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="eGuardian" class="col-sm-3 col-form-label">Guardian Name :</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="eGuardian" placeholder="">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="eHomeNumber" class="col-sm-3 col-form-label">Guardian (mobile) :</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="eHomeNumber" placeholder="">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="eAddress" class="col-sm-3 col-form-label">Address :</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="eAddress" placeholder="">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="eState" class="col-sm-3 col-form-label">City & State :</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="eState" placeholder="">
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="mt-4">
-                                        <button id="eSaveBtn" type="button" class="btn btn-primary mr-2 " style="background-color: #00d25b">Submit</button>
-                                        <button type="submit" class="btn btn-primary mr-2" style="background-color: #fc424a">Update</button>
-                                        <button type="submit" class="btn btn-primary mr-2" style="background-color: #ffab00">Delete</button>
-                                        <button class="btn btn-dark" style="background-color: #8f5fe8">Clear</button>
-                                    </div>
-
-                                </form>
-                            </div>
+                    <div class="row col-md-8">
+                        <div class="col-md-6">
+                            <label  class="form-label">Employee Code</label>
+                            <input type="text" class="form-control" placeholder="Enter Your Code" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label  class="form-label">Employee name</label>
+                            <input type="text" class="form-control"  placeholder="Enter Your Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputState" class="form-label">Gender</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputState" class="form-label">Status</label>
+                            <select  class="form-select">
+                                <option selected>Select Status</option>
+                                <option>Active</option>
+                                <option>Inactive</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label  class="form-label">Designation</label>
+                            <input type="text" class="form-control"  placeholder="Enter Designation" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label  class="form-label">Access Role</label>
+                            <input type="text" class="form-control"  placeholder="Enter Access Role" required>
                         </div>
                     </div>
-                </div>
 
-                <!--end of forms-->
+                    <div class="row g-md-3">
+                        <div class="col-4">
+                            <label for="inputAddress" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="col-4">
+                            <label for="inputAddress" class="form-label">Date of Join</label>
+                            <input type="date" class="form-control"  placeholder="1234 Main St">
+                        </div>
+                        <div class="col-md-4">
+                            <label  class="form-label">Attached Branch</label>
+                            <input type="text" class="form-control" placeholder="Enter Attached Branch" required>
+                        </div>
 
-                <!--table-->
+                        <div class="details personal">
+                            <span class="title">Address Details</span>
+                        </div>
+                        <div class="col-md-4">
+                            <label  class="form-label">Building NO</label>
+                            <input type="text" class="form-control"  placeholder="Enter Building NO" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Lane</label>
+                            <input type="text" class="form-control"  placeholder="Enter Lane" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label  class="form-label">Main City</label>
+                            <input type="text" class="form-control"  placeholder="Enter Main City" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label  class="form-label">Main State</label>
+                            <input type="text" class="form-control"  placeholder="Enter Main State" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Postal Code</label>
+                            <input type="text" class="form-control"  placeholder="Enter Postal Code" required>
+                        </div>
 
-                <div class="row ">
-                    <div class="col-12 grid-margin">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Order Status</h4>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th style="display:none">code</th>
-                                            <th>picture</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Dob</th>
-                                            <th>Gender</th>
-                                            <th>Join Date</th>
-                                            <th>Role</th>
-                                            <th>Civil Status</th>
-                                            <th>Designation</th>
-                                            <th>Address</th>
-                                            <th>Contact</th>
-                                            <th>Branch</th>
-                                            <th>Guardian Name</th>
-                                            <th>Guardian Contact</th>
-                                            <th style="display: none">address</th>
-                                            <th style="display: none">State</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody id="eTable">
+                        <div class="details personal">
+                            <span class="title">Contact Details</span>
+                        </div>
+                        <div class="col-md-4">
+                            <label  class="form-label">Contact Number</label>
+                            <input type="text" class="form-control"  placeholder="Enter Contact Number" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Email</label>
+                            <input type="text" class="form-control"  placeholder="Enter Email" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label  class="form-label">MInform in Case of Emergency</label>
+                            <input type="text" class="form-control"  placeholder="Enter Emergency" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label  class="form-label">Emergency Contact</label>
+                            <input type="text" class="form-control"  placeholder="Enter Emergency Contact" required>
+                        </div>
 
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                        <div class="d-grid gap-2 d-md-flex my-5">
+                            <button id="btnSave" class="btn btn-outline-primary me-md-2" type="submit">Save</button>
+                            <button id="btnUpdate" class="btn btn-outline-warning" type="button">Update</button>
+                            <button id="btnRemove" class="btn btn-outline-danger" type="button">Delete</button>
+                            <button id="btnGetAll" class="btn btn-outline-success" type="button">Get All</button>
                         </div>
                     </div>
+
                 </div>
 
-                <!--end of table-->
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Join Date</th>
+                            <th scope="col">Level</th>
+                            <th scope="col">Points</th>
+                            <th scope="col">DOB</th>
+                            <th scope="col">Contact No</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Building NO</th>
+                            <th scope="col">Lane</th>
+                            <th scope="col">City</th>
+                            <th scope="col">State</th>
+                            <th scope="col">Postal Code</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>C001</td>
+                            <td>Manith</td>
+                            <td>male</td>
+                            <td>19/08</td>
+                            <td>gold</td>
+                            <td>8</td>
+                            <td>07/22</td>
+                            <td>0713988628</td>
+                            <td>lakvidu00@gmail.com</td>
+                            <td>08</td>
+                            <td>galle</td>
+                            <td>matara</td>
+                            <td>State</td>
+                            <td>9</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            </div>
-        </div>
+
+
+                <!--    <div class="row">-->
+
+                <!--    </div>-->
+
+            </form>
+
+        </div></div>
+
+
+
+
         <!--Form Page End-->
 
         <!-- Footer Start -->
@@ -374,5 +350,20 @@
 
 <!-- Template Javascript -->
 <script src="../js/main.js"></script>
+<script>
+    function previewBeforeUpload(id){
+        document.querySelector("#"+id).addEventListener("change",function(e){
+            if(e.target.files.length == 0){
+                return;
+            }
+            let file = e.target.files[0];
+            let url = URL.createObjectURL(file);
+            document.querySelector("#"+id+"-preview div").innerText = file.name;
+            document.querySelector("#"+id+"-preview img").src = url;
+        });
+    }
+
+    previewBeforeUpload("file-1");
+</script>
 </body>
 </html>

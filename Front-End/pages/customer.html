@@ -31,6 +31,13 @@
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/Customer.css" rel="stylesheet">
 
+    <style>
+
+
+
+
+    </style>
+
 </head>
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
@@ -84,7 +91,7 @@
                     <i class="fa fa-bars"></i>
                 </a>
                 <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Search">
+                    <input class="form-control border-0" id="search" type="search" style="margin-bottom: 0px " placeholder="Search">
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
 
@@ -104,203 +111,138 @@
 
 
             <!--Form Page Start-->
-            <div class="main-panel">
-                <div class="content-wrapper">
-                    <div class="page-header">
-                        <!--              <h3 class="page-title"> Form elements </h3>-->
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#" style="color: #009CFF">Admin</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Customers</li>
-                            </ol>
-                        </nav>
+            <div class="container">
+
+                <form class="row g-3 p-3 ">
+                    <div class="details personal">
+                        <span class="title">Customer Details</span>
                     </div>
-
-                    <!--start of form-->
-
-                    <div class="row">
-                        <div class="col-md-12 col-lg-6 col-xl-6 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <!--                    <h4 class="card-title">Default form</h4>-->
-                                    <!--                    <p class="card-description"> Basic form layout </p>-->
-                                    <form class="forms-sample">
-
-                                        <div class="form-group row">
-                                            <label for="cId" class="col-sm-3 col-form-label">code :</label>
-                                            <div class="col-sm-9">
-                                                <input disabled type="text" class="form-control " id="cId" placeholder="" style="background: transparent">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label for="cName" class="col-sm-3 col-form-label">Name :</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" id="cName" placeholder="">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label for="cEmail" class="col-sm-3 col-form-label">Email :</label>
-                                            <div class="col-sm-9">
-                                                <input type="email" class="form-control" id="cEmail" placeholder="">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label for="cGender" class="col-sm-3 col-form-label">Gender :</label>
-                                            <div class="col-sm-9">
-                                                <select class="form-control" id="cGender">
-                                                    <option selected>Choose...</option>
-                                                    <option>Male</option>
-                                                    <option>Female</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label for="cDob" class="col-sm-3 col-form-label">Date of Birth :</label>
-                                            <div class="col-sm-9">
-                                                <input type="date" class="form-control" id="cDob" name="dob">
-                                            </div>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12 col-lg-6 col-xl-6 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <!--                    <h4 class="card-title">Horizontal Form</h4>-->
-                                    <!--                    <p class="card-description"> Horizontal form layout </p>-->
-                                    <form class="forms-sample">
-
-                                        <div class="form-group row">
-                                            <label for="cAddressLine" class="col-sm-3 col-form-label">Address :</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" id="cAddressLine" placeholder="">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label for="cStateCity" class="col-sm-3 col-form-label">City & State :</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" id="cStateCity" placeholder="">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label for="cLoyaltyDate" class="col-sm-3 col-form-label">Loyalty Date :</label>
-                                            <div class="col-sm-9">
-                                                <input type="date" class="form-control" id="cLoyaltyDate" name="dob">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label for="cContact" class="col-sm-3 col-form-label">Contact :</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" id="cContact" placeholder="">
-                                            </div>
-                                        </div>
-
-                                        <!--hidden text fields-->
-
-                                        <div style="display: none" class="form-group row">
-                                            <label for="cLevel" class="col-sm-3 col-form-label">Loyalty Level :</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" id="cLevel" placeholder="">
-                                            </div>
-                                        </div>
-
-                                        <div  style="display: none" class="form-group row">
-                                            <label for="cLoyaltyPoint" class="col-sm-3 col-form-label">Loyalty Points :</label>
-                                            <div class="col-sm-9">
-                                                <input  type="text" class="form-control" id="cLoyaltyPoint" placeholder="">
-                                            </div>
-                                        </div>
-
-                                        <div  style="display: none" class="form-group row">
-                                            <label for="cRecentDate" class="col-sm-3 col-form-label">Recent Date :</label>
-                                            <div class="col-sm-9">
-                                                <input  type="text" class="form-control" id="cRecentDate" placeholder="">
-                                            </div>
-                                        </div>
-
-                                        <!--end of hidden text fields-->
-
-                                        <div class="mt-4">
-                                            <button id="cSaveBtn" type="button" class="btn btn-primary mr-2 " style="background-color: #00d25b">Submit</button>
-                                            <button id="cUpdateBtn" type="button" class="btn btn-primary mr-2" style="background-color: #fc424a">Update</button>
-                                            <button id="cDeleteBtn" type="button" class="btn btn-primary mr-2" style="background-color: #ffab00">Delete</button>
-                                            <button id="cClearBtn" type="button" class="btn btn-dark" style="background-color: #8f5fe8">Clear</button>
-                                        </div>
-
-
-                                    </form>
-                                </div>
-                            </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Customer Code</label>
+                        <input type="text" class="form-control" id="validationDefault01" placeholder="Enter Your Code" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Customer name</label>
+                        <input type="text" class="form-control" id="validationDefault02" placeholder="Enter Your Name" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Gender</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>Select gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Others</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputEmail4" class="form-label">Join date</label>
+                        <input type="date" class="form-control" id="inputEmail4">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">Level</label>
+                        <select id="#" class="form-select">
+                            <option disabled selected>Select Level</option>
+                            <option>Gold</option>
+                            <option>Silver</option>
+                            <option>Bronze</option>
+                            <option>New</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputPassword4" class="form-label">Total points</label>
+                        <input type="number" class="form-control" id="inputPassword4">
+                    </div>
+                    <div class="col-4">
+                        <label for="inputAddress" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputCity" class="form-label">Mobile Number</label>
+                        <input type="text" class="form-control" id="inputCity" placeholder="Enter Your Number">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefaultUsername" class="form-label">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                            <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" placeholder="Enter Your Email" required>
                         </div>
                     </div>
 
-                    <!--end of form-->
-
-                    <!--table-->
-                    <div class="row ">
-                        <div class="col-12 grid-margin">
-                            <div class="card">
-                                <div class="card-header text-right" >
-
-                                    <div class="row">
-                                        <div class="col"></div>
-                                        <div class="col"></div>
-                                        <div class="col">
-                                            <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex  search">
-                                                <input id="cSearch" style="border-radius: 20px;background: transparent" type="text" class="form-control w-100" placeholder="Search Customers">
-                                            </form>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="card-body">
-                                    <!--                    <h4 class="card-title font-weight-bold" style="color:#6c7293;">Registered Customers</h4>-->
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead>
-                                            <tr>
-
-                                                <th>#</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Contact</th>
-                                                <th>Date of birth</th>
-                                                <th>Gender</th>
-                                                <th>Address</th>
-                                                <th style="display: none">city and state</th>
-                                                <th>Loyalty Date</th>
-                                                <th>Loyalty Level</th>
-                                                <th>Loyalty Points</th>
-                                                <th>Recent Purchase Date</th>
-                                                <th style="display: none">Address New</th>
-
-                                            </tr>
-                                            </thead>
-                                            <tbody id="cTable">
-
-
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="details personal">
+                        <span class="title">Address Details</span>
                     </div>
-                    <!--end of table-->
+                    <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Building NO</label>
+                        <input type="text" class="form-control"  placeholder="Enter Building NO" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Lane</label>
+                        <input type="text" class="form-control"  placeholder="Enter Lane" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Main City</label>
+                        <input type="text" class="form-control"  placeholder="Enter Main City" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Main State</label>
+                        <input type="text" class="form-control"  placeholder="Enter Main State" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">Postal Code</label>
+                        <input type="text" class="form-control"  placeholder="Enter Postal Code" required>
+                    </div>
 
+                    <div class=" gap-2 d-md-flex my-5">
+                        <button id="btnSave" class="btn btn-outline-primary me-md-2" type="submit">Save</button>
+                        <button id="btnUpdate" class="btn btn-outline-warning" type="button">Update</button>
+                        <button id="btnRemove" class="btn btn-outline-danger" type="button">Delete</button>
+                        <button id="btnGetAll" class="btn btn-outline-success" type="button">Get All</button>
+                    </div>
+                </form>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th scope="col">Code</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Join Date</th>
+                            <th scope="col">Level</th>
+                            <th scope="col">Points</th>
+                            <th scope="col">DOB</th>
+                            <th scope="col">Contact No</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Building NO</th>
+                            <th scope="col">Lane</th>
+                            <th scope="col">City</th>
+                            <th scope="col">State</th>
+                            <th scope="col">Postal Code</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>C001</td>
+                            <td>Manith</td>
+                            <td>male</td>
+                            <td>19/08</td>
+                            <td>gold</td>
+                            <td>8</td>
+                            <td>07/22</td>
+                            <td>0713988628</td>
+                            <td>lakvidu00@gmail.com</td>
+                            <td>08</td>
+                            <td>galle</td>
+                            <td>matara</td>
+                            <td>State</td>
+                            <td>9</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <!-- content-wrapper ends -->
+
+
+
             </div>
             <!--Form Page End-->
 
