@@ -29,6 +29,42 @@
 
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/Inventory.css" rel="stylesheet">
+
+    <style>
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .table th, .table td {
+            white-space: nowrap;
+            text-align: left;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        /* Optional: Adds zebra striping */
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0,0,0,.05);
+        }
+
+        @media (max-width: 768px) {
+            .table th, .table td {
+                padding: 10px 5px;
+            }
+        }
+
+
+
+
+    </style>
+
 </head>
 <body>
 <div class="container-xxl position-relative bg-white d-flex p-0">
@@ -82,7 +118,7 @@
                 <i class="fa fa-bars"></i>
             </a>
             <form class="d-none d-md-flex ms-4">
-                <input class="form-control border-0" type="search" placeholder="Search">
+                <input class="form-control border-0" id="search" type="search"  style="margin-bottom: 0px " placeholder="Search">
             </form>
             <div class="navbar-nav align-items-center ms-auto">
 
@@ -92,7 +128,7 @@
                         <span class="d-none d-lg-inline-flex">Manager</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                        <a href="#" class="dropdown-item">My Profile</a>
+                        <a href="profile.html" class="dropdown-item">My Profile</a>
                        <!-- <a href="#" class="dropdown-item">Settings</a>-->
                         <a href="../index.html" class="dropdown-item">Log Out</a>
                     </div>
@@ -100,6 +136,140 @@
             </div>
         </nav>
 
+        <!-- Form Start -->
+        <div class="container">
+            <div>
+                <form class="row g-3 p-3 ">
+                    <div class="details personal">
+                        <span class="title">Item Details</span>
+                    </div>
+
+                    <div class="row col-12">
+                        <div class="form col-md-4">
+                            <div class="grid">
+                                <div class="form-element">
+                                    <input type="file" id="file-1" accept="image/*" required>
+                                    <label for="file-1" id="file-1-preview">
+                                        <img src="https://bit.ly/3ubuq5o" alt="" >
+                                        <div>
+                                            <span>+</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row col-md-8">
+                            <div class="col-md-6">
+                                <label  class="form-label">Item Code</label>
+                                <input type="text" class="form-control" placeholder="Enter Item Code" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label  class="form-label">Item Description</label>
+                                <input type="text" class="form-control"  placeholder="Enter Description" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label  class="form-label">Category</label>
+                                <input type="text" class="form-control"  placeholder="Enter Category" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label  class="form-label">Size</label>
+                                <input type="text" class="form-control"  placeholder="Enter Size" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label  class="form-label">Item Quantity</label>
+                                <input type="number" class="form-control"  placeholder="Enter Quantity" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputState" class="form-label">Supplier Code</label>
+                                <select id="inputState" class="form-select">
+                                    <option selected>Select Code</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-md-3">
+                            <div class="col-md-4">
+                                <label for="inputState" class="form-label">Supplier Name</label>
+                                <select id="inputState1" class="form-select">
+                                    <option selected>Select Name</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label  class="form-label">Unit Price - Sale</label>
+                                <input type="number" class="form-control" placeholder="Enter Sale" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label  class="form-label">Expected Profit</label>
+                                <input type="number" class="form-control"  placeholder="Enter Profit" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Profit Margin</label>
+                                <input type="text" class="form-control"  placeholder="Enter Profit Margin" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="inputState" class="form-label">Status</label>
+                                <select id="inputState2" class="form-select">
+                                    <option selected>Select Status</option>
+                                    <option>Low</option>
+                                    <option>Available</option>
+                                    <option>Not Available</option>
+                                </select>
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-flex my-5">
+                                <button id="btnSave" class="btn btn-outline-primary me-md-2" type="submit">Save</button>
+                                <button id="btnUpdate" class="btn btn-outline-warning" type="button">Update</button>
+                                <button id="btnRemove" class="btn btn-outline-danger" type="button">Delete</button>
+                                <button id="btnGetAll" class="btn btn-outline-success" type="button">Get All</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th scope="col">Code</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Size</th>
+                                <th scope="col">QTY</th>
+                                <th scope="col">Supplier Code</th>
+                                <th scope="col">Supplier Name</th>
+                                <th scope="col">Unit Price - Sale</th>
+                                <th scope="col">Expected Profit</th>
+                                <th scope="col">Profit Margin</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <!--            <th scope="row">1</th>-->
+                                <td>C001</td>
+                                <td>Nike</td>
+                                <td>male</td>
+                                <td>10</td>
+                                <td>2</td>
+                                <td>8627</td>
+                                <td>Nike</td>
+                                <td>1200.00</td>
+                                <td>qweqwe</td>
+                                <td>qweqwe</td>
+                                <td>good</td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                </form>
+            </div>
+        </div>
+        <!-- Form End -->
 
         <!-- Footer Start -->
         <div class="container-fluid pt-4 px-4">
@@ -134,5 +304,21 @@
 
 <!-- Template Javascript -->
 <script src="../js/main.js"></script>
+
+<script>
+    function previewBeforeUpload(id){
+        document.querySelector("#"+id).addEventListener("change",function(e){
+            if(e.target.files.length == 0){
+                return;
+            }
+            let file = e.target.files[0];
+            let url = URL.createObjectURL(file);
+            document.querySelector("#"+id+"-preview div").innerText = file.name;
+            document.querySelector("#"+id+"-preview img").src = url;
+        });
+    }
+
+    previewBeforeUpload("file-1");
+</script>
 </body>
 </html>
