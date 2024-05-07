@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author: Manith Lakvidu,
- * @Runtime version: 11.0.11+9-b1341.60 amd64
+ *@author: Manith Lakvidu,
+ *@Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @RestController

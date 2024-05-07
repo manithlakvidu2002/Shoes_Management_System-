@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 /**
- * @author: Manith Lakvidu,
- * @Runtime version: 11.0.11+9-b1341.60 amd64
+ *@author: Manith Lakvidu,
+ *@Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @Data
@@ -57,7 +57,7 @@ public class EmployeeDTO {
     private String addressLine05;
 
     @NotBlank(message = "Contact number cannot be blank")
-    @Pattern(regexp = "^\\+?[0-9()-]+$", message = "Invalid contact number format")
+    @Pattern(regexp = "^\\+?[0-9()-]{1,11}$", message = "Invalid contact number format")
     private String contactNo;
 
     @NotBlank(message = "Email cannot be blank")

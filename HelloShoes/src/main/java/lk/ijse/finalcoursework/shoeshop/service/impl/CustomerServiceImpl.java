@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * @author: Manith Lakvidu,
- * @Runtime version: 11.0.11+9-b1341.60 amd64
+ *@author: Manith Lakvidu,
+ *@Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @Service
@@ -48,6 +48,7 @@ public class CustomerServiceImpl implements CustomerService {
         if(customerRepository.existsByCustomerCode(customerDTO.getCustomerCode())){
             throw new DublicateRecordException("This Customer "+customerDTO.getCustomerCode()+" already exicts...");
         }
+        customerDTO.setCustomerCode(genarateNextCustomerCode());
         return modelMapper.map(customerRepository.save(modelMapper.map(
                 customerDTO, Customer.class)), CustomerDTO.class
         );
@@ -73,5 +74,15 @@ public class CustomerServiceImpl implements CustomerService {
             throw  new NotFoundException("Customer ID"+ id + "Not Found...");
         }
         customerRepository.deleteByCustomerCode(id);
+    }
+
+    @Override
+    public String genarateNextCustomerCode() {
+        String lastCustomerCode = customerRepository.findLatestCustomerCode();
+        if(lastCustomerCode==null){lastCustomerCode = "CUS000";}
+        int numericPart = Integer.parseInt(lastCustomerCode.substring(3));
+        numericPart++;
+        String nextSupplierCode = "CUS" + String.format("%03d", numericPart);
+        return nextSupplierCode;
     }
 }

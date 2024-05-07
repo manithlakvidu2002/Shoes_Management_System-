@@ -1,6 +1,5 @@
 package lk.ijse.finalcoursework.shoeshop.persistence.entity;
 
-
 import jakarta.persistence.*;
 import lk.ijse.finalcoursework.shoeshop.util.Gender;
 import lk.ijse.finalcoursework.shoeshop.util.Level;
@@ -11,8 +10,8 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 /**
- * @author: Manith Lakvidu,
- * @Runtime version: 11.0.11+9-b1341.60 amd64
+ *@author: Manith Lakvidu,
+ *@Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @Data
@@ -23,9 +22,6 @@ import java.util.Date;
 @Table(name = "customers")
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(name = "customer_code", unique = true, nullable = false)
     private String customerCode;
 

@@ -1,15 +1,19 @@
 package lk.ijse.finalcoursework.shoeshop.persistence.entity;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 /**
- * @author: Manith Lakvidu,
- * @Runtime version: 11.0.11+9-b1341.60 amd64
+ *@author: Manith Lakvidu,
+ *@Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @Getter
@@ -35,8 +39,9 @@ public class Inventory {
     @Column(name = "size", nullable = false)
     private Integer size;
 
-    @Column(name = "supplier_code", nullable = false)
-    private String supplierCode;
+    @ManyToOne
+    @JoinColumn(name = "supplier_code" , referencedColumnName = "supplier_code")
+    private Supplier supplierCode;
 
     @Column(name = "supplier_name", nullable = false)
     private String supplierName;
@@ -55,4 +60,7 @@ public class Inventory {
 
     @Column(name = "status", nullable = false)
     private String status;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy =  "inventory")
+    private List<SalesDetails> salesDetails = new ArrayList<>();
 }

@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * @author: Manith Lakvidu,
- * @Runtime version: 11.0.11+9-b1341.60 amd64
+ *@author: Manith Lakvidu,
+ *@Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @Service
@@ -30,6 +30,7 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public List<SupplierDTO> getAllSuppliers() {
+        System.out.println(genarateNextSupplierCode());
         return supplierRepository.findAll().stream().map(
                 supplier -> modelMapper.map(supplier, SupplierDTO.class)
         ).toList();
@@ -73,5 +74,14 @@ public class SupplierServiceImpl implements SupplierService {
             throw  new NotFoundException("Supplier ID"+ id + "Not Found...");
         }
         supplierRepository.deleteBySupplierCode(id);
+    }
+
+    @Override
+    public String genarateNextSupplierCode() {
+        String lastSupplierCode = supplierRepository.findLatestSupplierCode();
+        int numericPart = Integer.parseInt(lastSupplierCode.substring(3));
+        numericPart++;
+        String nextSupplierCode = "SUP" + String.format("%03d", numericPart);
+        return nextSupplierCode;
     }
 }
