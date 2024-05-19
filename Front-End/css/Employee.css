@@ -1,3 +1,47 @@
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 15px rgba(64, 64, 64, 0.1); /* Light shadow */
+    background-color: #fff; /* White background */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: #4CAF50; /* Green background for header */
+    color: #fff; /* White text */
+    text-align: left;
+}
+.table th, .table td {
+    white-space: nowrap;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Optional: Adds zebra striping */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.05);
+}
+
+@media (max-width: 768px) {
+    .table th, .table td {
+        padding: 10px 5px;
+    }
+}
+
+
 
 #search{
     padding: 1vh;
@@ -58,31 +102,30 @@ input[type="file"] {
 }
 
 /* Base styles for all buttons */
-.btn {
+/*.btn {
     display: block;
     padding: 12px;
     border: none;
     color: #fff;
     font-size: 16px;
-    border-radius: 4px;
     transition: background-color 0.3s ease;
     text-align: center;
 }
 
-/* Color-specific button styles */
+!* Color-specific button styles *!
 .btn-outline-primary {
     background-color: #007bff;
 }
 .btn-outline-warning {
     background-color: #ffc107;
-    color: #212529; /* Ensuring better readability on light colors */
+    color: #212529; !* Ensuring better readability on light colors *!
 }
 .btn-outline-danger {
     background-color: #dc3545;
 }
 .btn-outline-success {
     background-color: #28a745;
-}
+}*/
 
 /* Hover effects */
 .btn:hover {
@@ -163,7 +206,6 @@ input[type="file"] {
 /* Button styles */
 .btn {
     padding: 12px 24px;
-    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -179,4 +221,3 @@ input[type="file"] {
     display: flex;
     justify-content: center;
 }
-

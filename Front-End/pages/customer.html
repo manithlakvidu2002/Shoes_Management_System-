@@ -9,7 +9,7 @@
 
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <!--<link href="img/favicon.ico" rel="icon">-->
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,13 +30,8 @@
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/Customer.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font/Heebo/stylesheet.css">
 
-    <style>
-
-
-
-
-    </style>
 
 </head>
 <body>
@@ -111,139 +106,115 @@
 
 
             <!--Form Page Start-->
-            <div class="container">
+            <section id="customer" class="container py-5 p-lg-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 class="mb-3">Customer Code:</h6>
+                        <input type="text" id="txtCustomerCode" class="form-control mb-4 w-75">
 
-                <form class="row g-3 p-3 ">
-                    <div class="details personal">
-                        <span class="title">Customer Details</span>
+                        <h6 class="mb-3">Customer Name:</h6>
+                        <input type="text" id="txtCustomerName" class="form-control mb-4 w-75">
+
+
+                        <h6 class="mb-3">Gender</h6>
+                        <div class="mb-4" id="cusGender">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="genderMale" value="MALE">
+                                <label class="form-check-label" for="genderMale">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="FEMALE">
+                                <label class="form-check-label" for="genderFemale">Female</label>
+                            </div>
+                        </div>
+
+                        <h6 class="mb-3">Join date as a loyalty customer:</h6>
+                        <input type="date" id="txtJoinDate" class="form-control mb-4 w-75">
+
+                        <h6 class="mb-3">Level:</h6>
+                        <div class="mb-4">
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="levelGold" value="Gold" name="level" class="form-check-input">
+                                <label for="levelGold" class="form-check-label">Gold</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="levelSilver" value="Silver" name="level" class="form-check-input">
+                                <label for="levelSilver" class="form-check-label">Silver</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="levelBronze" value="Bronze" name="level" class="form-check-input">
+                                <label for="levelBronze" class="form-check-label">Bronze</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" id="levelNew" value="New" name="level" class="form-check-input">
+                                <label for="levelNew" class="form-check-label">New</label>
+                            </div>
+                        </div>
+
+                        <h6 class="mb-3">Total points:</h6>
+                        <input type="text" id="txtTotalPoint" class="form-control mb-4 w-75">
+
+                        <h6 class="mb-3">DOB:</h6>
+                        <input type="date" id="txtDOB" class="form-control mb-4 w-75">
+
+                        <h6 class="mb-3">Recent purchase date and time:</h6>
+                        <input type="datetime-local" id="txtPurchaseDate" class="form-control mb-4 w-75">
                     </div>
-                    <div class="col-md-4">
-                        <label for="validationDefault01" class="form-label">Customer Code</label>
-                        <input type="text" class="form-control" id="validationDefault01" placeholder="Enter Your Code" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationDefault02" class="form-label">Customer name</label>
-                        <input type="text" class="form-control" id="validationDefault02" placeholder="Enter Your Name" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputState" class="form-label">Gender</label>
-                        <select id="inputState" class="form-select">
-                            <option selected>Select gender</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Others</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputEmail4" class="form-label">Join date</label>
-                        <input type="date" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputState" class="form-label">Level</label>
-                        <select id="#" class="form-select">
-                            <option disabled selected>Select Level</option>
-                            <option>Gold</option>
-                            <option>Silver</option>
-                            <option>Bronze</option>
-                            <option>New</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputPassword4" class="form-label">Total points</label>
-                        <input type="number" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="col-4">
-                        <label for="inputAddress" class="form-label">Date of Birth</label>
-                        <input type="date" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputCity" class="form-label">Mobile Number</label>
-                        <input type="text" class="form-control" id="inputCity" placeholder="Enter Your Number">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationDefaultUsername" class="form-label">Email</label>
-                        <div class="input-group">
-                            <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                            <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" placeholder="Enter Your Email" required>
+
+                    <div class="col-md-6">
+                        <h6 class="mb-3">Address Line 01:</h6>
+                        <input type="text" id="txtAddressLine01" class="form-control mb-4 w-75">
+
+                        <h6 class="mb-3">Address Line 02:</h6>
+                        <input type="text" id="txtAddressLine02" class="form-control mb-4 w-75">
+
+                        <h6 class="mb-3">Address Line 03:</h6>
+                        <input type="text" id="txtAddressLine03" class="form-control mb-4 w-75">
+
+                        <h6 class="mb-3">Address Line 04:</h6>
+                        <input type="text" id="txtAddressLine04" class="form-control mb-4 w-75">
+
+                        <h6 class="mb-3">Address Line 05:</h6>
+                        <input type="text" id="txtAddressLine05" class="form-control mb-4 w-75">
+
+                        <h6 class="mb-3">Contact No.:</h6>
+                        <input type="text" id="txtContactNo" class="form-control mb-4 w-75">
+
+                        <h6 class="mb-3">Email:</h6>
+                        <input type="text" id="txtEmail" class="form-control mb-4 w-75">
+
+                        <div class="d-grid gap-2 d-md-flex my-5">
+                            <button id="btnSaveCustomer" class="btn btn-outline-primary me-md-2" type="submit">Save</button>
+                            <button id="btnCustomerUpdate" class="btn btn-outline-warning" type="button">Update</button>
+                            <button id="btnCustomerDelete" class="btn btn-outline-danger" type="button">Delete</button>
+                            <button id="btnGetAllCustomer" class="btn btn-outline-success" type="button">Get All</button>
                         </div>
                     </div>
-
-                    <div class="details personal">
-                        <span class="title">Address Details</span>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationDefault01" class="form-label">Building NO</label>
-                        <input type="text" class="form-control"  placeholder="Enter Building NO" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationDefault02" class="form-label">Lane</label>
-                        <input type="text" class="form-control"  placeholder="Enter Lane" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationDefault01" class="form-label">Main City</label>
-                        <input type="text" class="form-control"  placeholder="Enter Main City" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationDefault02" class="form-label">Main State</label>
-                        <input type="text" class="form-control"  placeholder="Enter Main State" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="validationDefault01" class="form-label">Postal Code</label>
-                        <input type="text" class="form-control"  placeholder="Enter Postal Code" required>
-                    </div>
-
-                    <div class=" gap-2 d-md-flex my-5">
-                        <button id="btnSave" class="btn btn-outline-primary me-md-2" type="submit">Save</button>
-                        <button id="btnUpdate" class="btn btn-outline-warning" type="button">Update</button>
-                        <button id="btnRemove" class="btn btn-outline-danger" type="button">Delete</button>
-                        <button id="btnGetAll" class="btn btn-outline-success" type="button">Get All</button>
-                    </div>
-                </form>
+                </div>
 
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table class="table">
                         <thead>
-                        <tr>
-                            <th scope="col">Code</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Join Date</th>
-                            <th scope="col">Level</th>
-                            <th scope="col">Points</th>
-                            <th scope="col">DOB</th>
-                            <th scope="col">Contact No</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Building NO</th>
-                            <th scope="col">Lane</th>
-                            <th scope="col">City</th>
-                            <th scope="col">State</th>
-                            <th scope="col">Postal Code</th>
-                        </tr>
+                            <tr>
+                                <th>Code</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Join date</th>
+                                <th>Level</th>
+                                <th>Total points</th>
+                                <th>DOB</th>
+                                <th>Address</th>
+                                <th>Contact No</th>
+                                <th>Email</th>
+                                <th>Purchase date & time</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>C001</td>
-                            <td>Manith</td>
-                            <td>male</td>
-                            <td>19/08</td>
-                            <td>gold</td>
-                            <td>8</td>
-                            <td>07/22</td>
-                            <td>0713988628</td>
-                            <td>lakvidu00@gmail.com</td>
-                            <td>08</td>
-                            <td>galle</td>
-                            <td>matara</td>
-                            <td>State</td>
-                            <td>9</td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
 
-
-
-            </div>
+            </section>
             <!--Form Page End-->
 
 
@@ -255,7 +226,6 @@
                             &copy; <a href="#">Hello Shoe Pvt(Ltd)</a>, All Right Reserved.
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                             Designed By <a href="https://htmlcodex.com">Manith Lakvindu</a>
                         </div>
                     </div>
