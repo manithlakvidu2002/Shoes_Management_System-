@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- *@author: Manith Lakvidu,
- *@Runtime version: 11.0.11+9-b1341.60 amd64
+ * @author: Manith Lakvidu,
+ * @Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @RestController
 @RequestMapping("api/v0/suppliers")
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE,RequestMethod.PATCH, RequestMethod.OPTIONS})
 public class SupplierAPI {
     private final SupplierService supplierService;
 
@@ -35,16 +36,16 @@ public class SupplierAPI {
         return supplierService.saveSupplier(supplierDTO);
     }
 
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.ACCEPTED)
-    void updateSupplier(@Valid @RequestBody SupplierDTO supplierDTO){
-        supplierService.updateSupplier(supplierDTO.getSupplierCode(),supplierDTO);
+    void updateSupplier(@PathVariable("id") String id,@Valid @RequestBody SupplierDTO supplierDTO){
+        supplierService.updateSupplier(id,supplierDTO);
     }
 
-    @DeleteMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.ACCEPTED)
-    void deleteSupplier(@RequestBody SupplierDTO supplierDTO){
-        supplierService.deleteSupplier(supplierDTO.getSupplierCode());
+    void deleteSupplier(@PathVariable("id") String id){
+        supplierService.deleteSupplier(id);
     }
 
     @PatchMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)

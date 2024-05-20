@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- *@author: Manith Lakvidu,
- *@Runtime version: 11.0.11+9-b1341.60 amd64
+ * @author: Manith Lakvidu,
+ * @Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @Service
@@ -56,16 +56,11 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public void updateSupplier(String id, SupplierDTO supplierDTO) {
-        Supplier existingSupplier = supplierRepository.findBySupplierCode(id);
-
-        if(existingSupplier.getSupplierCode().isEmpty()){
+        if(!supplierRepository.existsBySupplierCode(id)){
             throw new NotFoundException("Supplier ID"+ id + "Not Found...");
         }
-
-        existingSupplier.setSupplierName(supplierDTO.getSupplierName());
-        existingSupplier.setCategory(supplierDTO.getCategory());
-
-        supplierRepository.save(existingSupplier);
+        supplierDTO.setSupplierCode(id);
+        supplierRepository.save(modelMapper.map(supplierDTO,Supplier.class));
     }
 
     @Override

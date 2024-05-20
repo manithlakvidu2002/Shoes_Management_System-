@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- *@author: Manith Lakvidu,
- *@Runtime version: 11.0.11+9-b1341.60 amd64
+ * @author: Manith Lakvidu,
+ * @Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @Getter
@@ -42,4 +42,10 @@ public class SupplierDTO {
     @NotBlank(message = "Contact No.1 is required")
     @Pattern(regexp = "^\\+?[0-9()-]{1,11}$", message = "Invalid contact number format")
     private String contactNo1;
+
+    @NotBlank(message = "Contact No.1 is required")
+    @Pattern(regexp = "^\\+?[0-9()-]{1,11}$", message = "Invalid contact number format")
+    private String landLineNo;
+
+    private String email;
 }

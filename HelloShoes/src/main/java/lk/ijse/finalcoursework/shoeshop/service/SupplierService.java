@@ -6,8 +6,8 @@ import lk.ijse.finalcoursework.shoeshop.dto.SupplierDTO;
 import java.util.List;
 
 /**
- *@author: Manith Lakvidu,
- *@Runtime version: 11.0.11+9-b1341.60 amd64
+ * @author: Manith Lakvidu,
+ * @Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 public interface SupplierService {

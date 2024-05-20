@@ -12,15 +12,15 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 /**
- *@author: Manith Lakvidu,
- *@Runtime version: 11.0.11+9-b1341.60 amd64
+ * @author: Manith Lakvidu,
+ * @Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerDTO {
-    @Null(message = "Supplier CODE is auto genarated")
+    @Null(message = "Customer CODE is auto genarated")
     private String customerCode;
     @NotBlank(message = "Customer Name Cannot Be Null")
     @Pattern(regexp = "^[a-zA-Z]+(?:[ '-][a-zA-Z]+)*$", message = "Name not valid")

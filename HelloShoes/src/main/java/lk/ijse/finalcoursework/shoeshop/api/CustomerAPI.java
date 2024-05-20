@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- *@author: Manith Lakvidu,
- *@Runtime version: 11.0.11+9-b1341.60 amd64
+ * @author: Manith Lakvidu,
+ * @Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @RestController
 @RequestMapping("api/v0/customers")
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE,RequestMethod.PATCH, RequestMethod.OPTIONS})
 public class CustomerAPI {
     private final CustomerService customerService;
 
@@ -34,16 +35,16 @@ public class CustomerAPI {
         return customerService.saveCustomer(customerDTO);
     }
 
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.ACCEPTED)
-    void updateCustomer(@Valid @RequestBody CustomerDTO customerDTO){
-        customerService.updateCustomer(customerDTO.getCustomerCode(),customerDTO);
+    void updateCustomer(@Valid @RequestBody CustomerDTO customerDTO,@PathVariable("id") String id){
+        customerService.updateCustomer(id,customerDTO);
     }
 
-    @DeleteMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.ACCEPTED)
-    void deleteCustomer(@RequestBody CustomerDTO customerDTO){
-        customerService.deleteCustomer(customerDTO.getCustomerCode());
+    void deleteCustomer(@PathVariable("id") String id){
+        customerService.deleteCustomer(id);
     }
 
     @PatchMapping(value = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)

@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- *@author: Manith Lakvidu,
- *@Runtime version: 11.0.11+9-b1341.60 amd64
+ * @author: Manith Lakvidu,
+ * @Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @Service
@@ -56,16 +56,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void updateCustomer(String id, CustomerDTO customerDTO) {
-        Customer existingCustomer = customerRepository.findByCustomerCode(id);
-
-        if(existingCustomer.getCustomerName().isEmpty()){
+        if(!customerRepository.existsByCustomerCode(id)){
             throw new NotFoundException("Customer ID"+ id + "Not Found...");
         }
-
-        existingCustomer.setCustomerName(customerDTO.getCustomerName());
-        existingCustomer.setGender(customerDTO.getGender());
-
-        customerRepository.save(existingCustomer);
+        customerDTO.setCustomerCode(id);
+        customerRepository.save(modelMapper.map(customerDTO,Customer.class));
     }
 
     @Override

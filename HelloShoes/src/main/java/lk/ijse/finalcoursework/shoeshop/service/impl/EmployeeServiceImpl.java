@@ -16,8 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- *@author: Manith Lakvidu,
- *@Runtime version: 11.0.11+9-b1341.60 amd64
+ * @author: Manith Lakvidu,
+ * @Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @Service
@@ -58,16 +58,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void updateEmployee(String id, EmployeeDTO employeeDTO) {
-        Employee existingEmployee = employeeRepository.findByEmployeeCode(id);
-
-        if(existingEmployee.getEmployeeName().isEmpty()){
+        if(!employeeRepository.existsByEmployeeCode(id)){
             throw new NotFoundException("Employee ID"+ id + "Not Found...");
         }
-
-        existingEmployee.setEmployeeName(employeeDTO.getEmployeeName());
-        existingEmployee.setGender(employeeDTO.getGender());
-
-        employeeRepository.save(existingEmployee);
+        employeeDTO.setEmployeeCode(id);
+        employeeRepository.save(modelMapper.map(employeeDTO,Employee.class));
     }
 
     @Override

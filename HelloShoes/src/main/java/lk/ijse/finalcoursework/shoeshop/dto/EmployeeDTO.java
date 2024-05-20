@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 /**
- *@author: Manith Lakvidu,
- *@Runtime version: 11.0.11+9-b1341.60 amd64
+ * @author: Manith Lakvidu,
+ * @Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @Data
@@ -64,6 +64,7 @@ public class EmployeeDTO {
     @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Invalid email format")
     private String email;
 
+    private String emergencyContact;
     private String emergencyContactPerson;
 
 }

@@ -11,8 +11,8 @@ import lombok.Setter;
 import java.util.Date;
 
 /**
- *@author: Manith Lakvidu,
- *@Runtime version: 11.0.11+9-b1341.60 amd64
+ * @author: Manith Lakvidu,
+ * @Runtime version: 11.0.11+9-b1341.60 amd64
  **/
 
 @Getter
@@ -76,6 +76,9 @@ public class Employee {
 
     @Column(name = "email", nullable = false)
     private String email;
+
+    @Column(name = "emergency_contact")
+    private String emergencyContact;
 
     @Column(name = "emergency_contact_person")
     private String emergencyContactPerson;
