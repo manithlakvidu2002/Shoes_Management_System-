@@ -86,6 +86,8 @@
             </a>
             <form class="d-none d-md-flex ms-4">
                 <input class="form-control border-0" id="search" type="search"  style="margin-bottom: 0px " placeholder="Search">
+                <button type="button" class="btn btn-outline-warning inventorydataget " style="margin-left: 20px" >Search</button>
+
             </form>
             <div class="navbar-nav align-items-center ms-auto">
 
@@ -104,7 +106,7 @@
         </nav>
 
         <!-- Form Start -->
-        <div class="container fw-bold">
+        <div class="container fw-bold" style="display: block ">
             <div>
                 <form class="row g-3 p-3 ">
                     <div class="details personal">
@@ -112,7 +114,7 @@
                     </div>
 
                     <div class="row col-12">
-                        <div class="form col-md-4">
+                        <!--<div class="form col-md-4">
                             <div class="grid">
                                 <div class="form-element">
                                     <input type="file" id="file-1" accept="image/*" required>
@@ -124,109 +126,133 @@
                                     </label>
                                 </div>
                             </div>
+                        </div>-->
+                        <div class="form col-md-4">
+                            <div class="grid">
+                                <div class="form-element">
+                                    <input type="file" id="inventory-file-input" class="inventoryImageToDefault" accept="image/*" required>
+                                    <label for="inventory-image-preview" id="inventory-image-preview">
+                                        <div id="image-preview">
+                                            <img class="inventoryimgpreview" src="" alt="">
+                                            <img class="inventorydefaultimg" src="" alt="">
+                                        </div>
+                                        <div>
+                                            <span>+</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="row col-md-8">
                             <div class="col-md-6">
                                 <label  class="form-label">Item Code</label>
-                                <input type="text" class="form-control" placeholder="Enter Item Code" required>
+                                <input type="text" class="form-control inventorycode" id="inventorycode"  placeholder="Enter Item Code" required >
                             </div>
                             <div class="col-md-6">
                                 <label  class="form-label">Item Description</label>
-                                <input type="text" class="form-control"  placeholder="Enter Description" required>
+                                <input type="text" class="form-control inventorydescription" id="inventorydescription" placeholder="Enter Description" required>
                             </div>
-                            <div class="col-md-6">
+                            <!--<div class="col-md-6">
                                 <label  class="form-label">Category</label>
-                                <input type="text" class="form-control"  placeholder="Enter Category" required>
-                            </div>
+                                <input type="text" class="form-control inventorycategory"  id="inventorycategory" placeholder="Enter Category" required>
+                            </div>-->
                             <div class="col-md-6">
                                 <label  class="form-label">Size</label>
-                                <input type="text" class="form-control"  placeholder="Enter Size" required>
+                                <input type="text" class="form-control inventorysize" id="inventorysize" placeholder="Enter Size" required>
                             </div>
                             <div class="col-md-6">
                                 <label  class="form-label">Item Quantity</label>
-                                <input type="number" class="form-control"  placeholder="Enter Quantity" required>
+                                <input type="number" class="form-control inventoryquantity"  placeholder="Enter Quantity" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="inputState" class="form-label">Supplier Code</label>
-                                <select id="inputState" class="form-select">
+                                <label  class="form-label">Supplier Code</label>
+                                <!--<select id="inventorysuppliercode" class="form-select inventorysuppliercode">
                                     <option selected>Select Code</option>
-                                </select>
+                                </select>-->
+                                <input type="text" class="form-control inventorysuppliercode"  placeholder="Enter Quantity" required>
+
                             </div>
                         </div>
 
                         <div class="row g-md-3">
                             <div class="col-md-4">
-                                <label for="inputState" class="form-label">Supplier Name</label>
-                                <select id="inputState1" class="form-select">
+                                <label  class="form-label">Supplier Name</label>
+                                <!--<select id="inventorysuppliername" class="form-select inventorysuppliername">
                                     <option selected>Select Name</option>
-                                </select>
+                                </select>-->
+                                <input type="text" class="form-control inventorysuppliercode"  placeholder="Enter Quantity" required>
                             </div>
                             <div class="col-md-4">
                                 <label  class="form-label">Unit Price - Sale</label>
-                                <input type="number" class="form-control" placeholder="Enter Sale" required>
+                                <input type="number" class="form-control inventorysaleprice" id="inventorysaleprice" placeholder="Enter Sale" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label  class="form-label">Buy Price</label>
+                                <input type="number" class="form-control inventorybuyprice" id="inventoryquantity" placeholder="Enter Quantity" required>
                             </div>
                             <div class="col-md-4">
                                 <label  class="form-label">Expected Profit</label>
-                                <input type="number" class="form-control"  placeholder="Enter Profit" required>
+                                <input type="number" class="form-control inventoryexpectedprofit"  id="inventoryexpectedprofit" placeholder="Enter Profit" required>
                             </div>
                             <div class="col-md-4">
                                 <label class="form-label">Profit Margin</label>
-                                <input type="text" class="form-control"  placeholder="Enter Profit Margin" required>
+                                <input type="text" class="form-control inventoryprofitmargin" id="inventoryprofitmargin"  placeholder="Enter Profit Margin" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="inputState" class="form-label">Status</label>
-                                <select id="inputState2" class="form-select">
+                                <label for="inventorystatus" class="form-label">Status</label>
+                                <select id="inventorystatus" class="form-select inventorystatus">
                                     <option selected>Select Status</option>
-                                    <option>Low</option>
-                                    <option>Available</option>
-                                    <option>Not Available</option>
+                                    <option value="1">Low</option>
+                                    <option value="2">Available</option>
+                                    <option value="3">Not Available</option>
                                 </select>
                             </div>
 
                             <div class="d-grid gap-2 d-md-flex my-5">
-                                <button id="btnSave" class="btn btn-outline-primary me-md-2" type="submit">Save</button>
-                                <button id="btnUpdate" class="btn btn-outline-warning" type="button">Update</button>
-                                <button id="btnRemove" class="btn btn-outline-danger" type="button">Delete</button>
-                                <button id="btnGetAll" class="btn btn-outline-success" type="button">Get All</button>
+                                <button  class="btn btn-outline-primary me-md-2 inventorydatasave" type="submit">Save</button>
+                                <button  class="btn btn-outline-warning inventorydataupdate" type="button">Update</button>
+                                <button  class="btn btn-outline-danger inventorydatadelete" type="button">Delete</button>
+                                <button  class="btn btn-outline-success inventoryalldataget" type="button">Get All</button>
                             </div>
                         </div>
 
                     </div>
 
                     <div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered inventorytable" >
                             <thead>
-                            <tr>
-                                <th scope="col">Code</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Category</th>
-                                <th scope="col">Size</th>
-                                <th scope="col">QTY</th>
-                                <th scope="col">Supplier Code</th>
-                                <th scope="col">Supplier Name</th>
-                                <th scope="col">Unit Price - Sale</th>
-                                <th scope="col">Expected Profit</th>
-                                <th scope="col">Profit Margin</th>
-                                <th scope="col">Status</th>
-                            </tr>
+                                <tr>
+                                    <th scope="col">Code</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Size</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Supplier_Code</th>
+                                    <th scope="col">Supplier_Name</th>
+                                    <th scope="col">Sale(LKR)</th>
+                                    <th scope="col">Buy(LKR)</th>
+                                    <th scope="col">Profit</th>
+                                    <th scope="col">Profit_Margin</th>
+                                    <th scope="col">Status</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <!--            <th scope="row">1</th>-->
-                                <td>C001</td>
-                                <td>Nike</td>
-                                <td>male</td>
-                                <td>10</td>
-                                <td>2</td>
-                                <td>8627</td>
-                                <td>Nike</td>
-                                <td>1200.00</td>
-                                <td>qweqwe</td>
-                                <td>qweqwe</td>
-                                <td>good</td>
+                                <tr>
+                                    <!--            <th scope="row">1</th>-->
+                                    <td>C001</td>
+                                    <td>Nike</td>
+                                    <td>male</td>
+                                    <td>10</td>
+                                    <td>2</td>
+                                    <td>8627</td>
+                                    <td>Nike</td>
+                                    <td>1200.00</td>
+                                    <td>qweqwe</td>
+                                    <td>qweqwe</td>
+                                    <td>good</td>
 
-                            </tr>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -237,6 +263,150 @@
             </div>
         </div>
         <!-- Form End -->
+
+
+        <!--popupForm Start-->
+<!--
+        <div class="col-12 d-flex flex-wrap justify-content-center align-items-center inventoryformpopupmaincontainer" style="display: none !important;">
+            <div class="col-5 d-flex flex-wrap justify-content-center">
+                <div class="col-12 inventorypopupformheader d-flex align-items-center justify-content-end">
+                    <button class="inventorypopupformclosebtn">
+                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="d-flex flex-wrap justify-content-between inventorypopupformbody">
+                    <div class="firstcontainerfirstpart">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label labelfont">Occasion</label>
+                            <select class="form-select inputfont occasion" id="exampleFormControlInput1" aria-label="Default select example">
+                                <option class="selectedfont" selected>Select Occasion</option>
+                                <option class="selectedfont" value="1">FORMAL</option>
+                                <option class="selectedfont" value="2">CASUAL</option>
+                                <option class="selectedfont" value="3">INDUSTRIAL</option>
+                                <option class="selectedfont" value="4">SPORT</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="firstcontainersecondpart">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label labelfont">Verities</label>
+                            <select class="form-select inputfont shoeverities" aria-label="Default select example">
+                                <option class="selectedfont" selected>Select Verities</option>
+                                <option class="selectedfont" value="1">HEEL</option>
+                                <option class="selectedfont" value="2">FLATS</option>
+                                <option class="selectedfont" value="3">WEDGES</option>
+                                <option class="selectedfont" value="4">FLIP FLOPS</option>
+                                <option class="selectedfont" value="5">SANDALS</option>
+                                <option class="selectedfont" value="6">SHOES</option>
+                                <option class="selectedfont" value="7">SLIPPERS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="firstcontainerthirdpart">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label labelfont">Category</label>
+                            <select class="form-select inputfont inventorycategory" aria-label="Default select example">
+                                <option class="selectedfont" selected>Select Category</option>
+                                <option class="selectedfont" value="1">MALE</option>
+                                <option class="selectedfont" value="2">FEMALE</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="firstcontainerforthdpart">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label labelfont">Verities</label>
+                            <select class="form-select inputfont otherverities" aria-label="Default select example">
+                                <option class="selectedfont" selected>Select Verities</option>
+                                <option class="selectedfont" value="1">SHOE SHAMPOO</option>
+                                <option class="selectedfont" value="2">POLISH BLACK</option>
+                                <option class="selectedfont" value="3">POLISH BROWN</option>
+                                <option class="selectedfont" value="4">POLISH DARK BROWN</option>
+                                <option class="selectedfont" value="5">FULL-SOCKS</option>
+                                <option class="selectedfont" value="6">HALF-SOCKS</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 inventorypopupformbuttoncontainer">
+                            <div class="col-12 d-flex flex-wrap justify-content-end">
+                                <button type="button" class="btn btn-outline-primary inventorypopupbtn">ok</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
+
+        <!-- Trigger Button -->
+        <!--<button type="button" class="btn btn-primary inventorycode" data-bs-toggle="modal" data-bs-target="#inventoryModal">
+            Open Form
+        </button>-->
+
+        <!-- Bootstrap Modal -->
+        <div class="modal fade" id="inventoryModal" tabindex="-1" aria-labelledby="inventoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="inventoryModalLabel">Item Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="occasion" class="form-label labelfont">Occasion</label>
+                                <select class="form-select inputfont occasion" id="occasion" aria-label="Default select example">
+                                    <option class="selectedfont" selected>Select Occasion</option>
+                                    <option class="selectedfont" value="1">FORMAL</option>
+                                    <option class="selectedfont" value="2">CASUAL</option>
+                                    <option class="selectedfont" value="3">INDUSTRIAL</option>
+                                    <option class="selectedfont" value="4">SPORT</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="shoeverities" class="form-label labelfont">Verities</label>
+                                <select class="form-select inputfont shoeverities" id="shoeverities" aria-label="Default select example">
+                                    <option class="selectedfont" selected>Select Verities</option>
+                                    <option class="selectedfont" value="1">HEEL</option>
+                                    <option class="selectedfont" value="2">FLATS</option>
+                                    <option class="selectedfont" value="3">WEDGES</option>
+                                    <option class="selectedfont" value="4">FLIP FLOPS</option>
+                                    <option class="selectedfont" value="5">SANDALS</option>
+                                    <option class="selectedfont" value="6">SHOES</option>
+                                    <option class="selectedfont" value="7">SLIPPERS</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inventorycategory" class="form-label labelfont">Category</label>
+                                <select class="form-select inputfont inventorycategory" id="inventorycategory" aria-label="Default select example">
+                                    <option class="selectedfont" selected>Select Category</option>
+                                    <option class="selectedfont" value="1">MALE</option>
+                                    <option class="selectedfont" value="2">FEMALE</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="otherverities" class="form-label labelfont">Verities</label>
+                                <select class="form-select inputfont otherverities" id="otherverities" aria-label="Default select example">
+                                    <option class="selectedfont" selected>Select Verities</option>
+                                    <option class="selectedfont" value="1">SHOE SHAMPOO</option>
+                                    <option class="selectedfont" value="2">POLISH BLACK</option>
+                                    <option class="selectedfont" value="3">POLISH BROWN</option>
+                                    <option class="selectedfont" value="4">POLISH DARK BROWN</option>
+                                    <option class="selectedfont" value="5">FULL-SOCKS</option>
+                                    <option class="selectedfont" value="6">HALF-SOCKS</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 inventorypopupformbuttoncontainer">
+                                <div class="col-12 d-flex flex-wrap justify-content-end">
+                                    <button type="button" class="btn btn-outline-primary inventorypopupbtn">OK</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--popupForm End -->
+
 
         <!-- Footer Start -->
         <div class="container-fluid pt-4 px-4">
@@ -258,6 +428,7 @@
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 </div>
 
+
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -270,22 +441,16 @@
 <script src="../lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
 <!-- Template Javascript -->
+
 <script src="../js/main.js"></script>
+<script src="../ajax/employee/Employee.js"></script>
+<script src="../assets/script/inventoryform/InventoryForm.js"></script>
+<script src="../assets/script/jquery-3.7.1.min.js"></script>
+<script src="../ajax/GlobalAttr.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script>
-    function previewBeforeUpload(id){
-        document.querySelector("#"+id).addEventListener("change",function(e){
-            if(e.target.files.length == 0){
-                return;
-            }
-            let file = e.target.files[0];
-            let url = URL.createObjectURL(file);
-            document.querySelector("#"+id+"-preview div").innerText = file.name;
-            document.querySelector("#"+id+"-preview img").src = url;
-        });
-    }
 
-    previewBeforeUpload("file-1");
-</script>
+
+
 </body>
 </html>

@@ -41,7 +41,7 @@ public class Inventory {
 
     @ManyToOne
     @JoinColumn(name = "supplier_code" , referencedColumnName = "supplier_code")
-    private Supplier supplierCode;
+    private Supplier supplier;
 
     @Column(name = "supplier_name", nullable = false)
     private String supplierName;
@@ -60,6 +60,9 @@ public class Inventory {
 
     @Column(name = "status", nullable = false)
     private String status;
+
+    @Column(name = "quantity", nullable = false)
+    private Integer quantity;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy =  "inventory")
     private List<SalesDetails> salesDetails = new ArrayList<>();

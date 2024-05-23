@@ -176,7 +176,6 @@ input[type="file"] {
 
 /* Button styles */
 .btn {
-    padding: 12px 24px;
     /*border-radius: 5px;*/
     cursor: pointer;
 }
@@ -220,5 +219,46 @@ input[type="file"] {
     .table th, .table td {
         padding: 10px 5px;
     }
+}
+
+.inventoryformpopupmaincontainer{
+    position: absolute;
+    height: 100%;
+    background-color: rgba(59, 59, 59, 0.474);
+}
+
+.inventoryformpopupmaincontainer>div:nth-child(1){
+    position: relative;
+    height: 50%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.inventorypopupformheader{
+    position: relative;
+    height: 40px;
+}
+
+.inventorypopupformclosebtn{
+    background-color: transparent;
+    border: 0px;
+}
+
+.inventorypopupformbody{
+    position: relative;
+    height: 400px;
+    width: 90%;
+}
+
+.inventorypopupformbody>div{
+    width: calc(95%/2);
+}
+
+.inventorypopupbtn{
+    width: 70px;
+    font-family: "Dongle", cursive;
+    font-size: 25px !important;
+    line-height: 20px;
 }
 

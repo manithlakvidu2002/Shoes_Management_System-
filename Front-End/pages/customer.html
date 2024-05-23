@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="../font/Heebo/stylesheet.css">
 
 
+
 </head>
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">
@@ -87,6 +88,8 @@
                 </a>
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" id="search" type="search" style="margin-bottom: 0px " placeholder="Search">
+                    <button type="button" class="btn btn-outline-warning customerdataget" style="margin-left: 20px" >Search</button>
+
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
 
@@ -110,90 +113,80 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h6 class="mb-3">Customer Code:</h6>
-                        <input type="text" id="txtCustomerCode" class="form-control mb-4 w-75">
+                        <input type="text"  class="form-control mb-4 w-75 customercode">
 
                         <h6 class="mb-3">Customer Name:</h6>
-                        <input type="text" id="txtCustomerName" class="form-control mb-4 w-75">
+                        <input type="text"  class="form-control mb-4 w-75 customername">
 
 
-                        <h6 class="mb-3">Gender</h6>
-                        <div class="mb-4" id="cusGender">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="genderMale" value="MALE">
-                                <label class="form-check-label" for="genderMale">Male</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="FEMALE">
-                                <label class="form-check-label" for="genderFemale">Female</label>
-                            </div>
+
+                        <div class="mb-4" >
+                            <label for="inputGender" class="form-label"><b>Gender</b></label>
+                            <select id="inputGender" class="form-select mb-4 w-75 customergender">
+                                <option disabled selected>Gender</option>
+                                <option value="1">MALE</option>
+                                <option value="2">FEMALE</option>
+                                <option value="3">OTHER</option>
+                            </select>
                         </div>
 
                         <h6 class="mb-3">Join date as a loyalty customer:</h6>
-                        <input type="date" id="txtJoinDate" class="form-control mb-4 w-75">
+                        <input type="date"  class="form-control mb-4 w-75 joindate">
 
-                        <h6 class="mb-3">Level:</h6>
                         <div class="mb-4">
-                            <div class="form-check form-check-inline">
-                                <input type="radio" id="levelGold" value="Gold" name="level" class="form-check-input">
-                                <label for="levelGold" class="form-check-label">Gold</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" id="levelSilver" value="Silver" name="level" class="form-check-input">
-                                <label for="levelSilver" class="form-check-label">Silver</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" id="levelBronze" value="Bronze" name="level" class="form-check-input">
-                                <label for="levelBronze" class="form-check-label">Bronze</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input type="radio" id="levelNew" value="New" name="level" class="form-check-input">
-                                <label for="levelNew" class="form-check-label">New</label>
-                            </div>
+                            <label for="customerlevel" class="form-label "><b>Level</b></label>
+                            <select id="customerlevel" class="form-select mb-4 w-75 customerlevel">
+                                <option disabled selected>Level</option>
+                                <option value="1"> GOLD</option>
+                                <option value="2">SILVER</option>
+                                <option value="3">BRONZE</option>
+                                <option value="4">NEW</option>
+                            </select>
                         </div>
 
                         <h6 class="mb-3">Total points:</h6>
-                        <input type="text" id="txtTotalPoint" class="form-control mb-4 w-75">
+                        <input type="text" id="customertotalpoints" class="form-control mb-4 w-75 customertotalpoints">
 
                         <h6 class="mb-3">DOB:</h6>
-                        <input type="date" id="txtDOB" class="form-control mb-4 w-75">
+                        <input type="date" id="customerdob" class="form-control mb-4 w-75 customerdob">
 
                         <h6 class="mb-3">Recent purchase date and time:</h6>
-                        <input type="datetime-local" id="txtPurchaseDate" class="form-control mb-4 w-75">
+                        <input type="datetime-local" id="customerrecentpurchasedatetime" class="form-control mb-4 w-75 customerrecentpurchasedatetime">
                     </div>
 
                     <div class="col-md-6">
                         <h6 class="mb-3">Address Line 01:</h6>
-                        <input type="text" id="txtAddressLine01" class="form-control mb-4 w-75">
+                        <input type="text" id="customeraddressline01" class="form-control mb-4 w-75 customeraddressline01">
 
                         <h6 class="mb-3">Address Line 02:</h6>
-                        <input type="text" id="txtAddressLine02" class="form-control mb-4 w-75">
+                        <input type="text" id="customeraddressline02" class="form-control mb-4 w-75 customeraddressline02">
 
                         <h6 class="mb-3">Address Line 03:</h6>
-                        <input type="text" id="txtAddressLine03" class="form-control mb-4 w-75">
+                        <input type="text" id="customeraddressline03" class="form-control mb-4 w-75 customeraddressline03">
 
                         <h6 class="mb-3">Address Line 04:</h6>
-                        <input type="text" id="txtAddressLine04" class="form-control mb-4 w-75">
+                        <input type="text" id="customeraddressline04" class="form-control mb-4 w-75 customeraddressline04">
 
                         <h6 class="mb-3">Address Line 05:</h6>
-                        <input type="text" id="txtAddressLine05" class="form-control mb-4 w-75">
+                        <input type="text" id="customeraddressline05" class="form-control mb-4 w-75 customeraddressline05">
 
                         <h6 class="mb-3">Contact No.:</h6>
-                        <input type="text" id="txtContactNo" class="form-control mb-4 w-75">
+                        <input type="text" id="customercontactno" class="form-control mb-4 w-75 customercontactno">
 
                         <h6 class="mb-3">Email:</h6>
-                        <input type="text" id="txtEmail" class="form-control mb-4 w-75">
+                        <input type="text" id="customeremail" class="form-control mb-4 w-75 customeremail">
 
                         <div class="d-grid gap-2 d-md-flex my-5">
-                            <button id="btnSaveCustomer" class="btn btn-outline-primary me-md-2" type="submit">Save</button>
-                            <button id="btnCustomerUpdate" class="btn btn-outline-warning" type="button">Update</button>
-                            <button id="btnCustomerDelete" class="btn btn-outline-danger" type="button">Delete</button>
-                            <button id="btnGetAllCustomer" class="btn btn-outline-success" type="button">Get All</button>
+                            <button  class="btn btn-outline-primary me-md-2 customerdatasave" type="submit">Save</button>
+                            <button  class="btn btn-outline-warning customerdataupdate" type="button">Update</button>
+                            <button  class="btn btn-outline-danger customerdatadelete" type="button">Delete</button>
+                            <button  class="btn btn-outline-success customeralldataget" type="button">Get All</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table customertable" id="customertable">
                         <thead>
                             <tr>
                                 <th>Code</th>
@@ -251,5 +244,11 @@
 
     <!-- Template Javascript -->
     <script src="../js/main.js"></script>
+    <script src="../ajax/customer/Customer.js"></script>
+    <script src="../assets/script/customerform/CustomerForm.js"></script>
+    <script src="../assets/script/jquery-3.7.1.min.js"></script>
+    <script src="../ajax/GlobalAttr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>
