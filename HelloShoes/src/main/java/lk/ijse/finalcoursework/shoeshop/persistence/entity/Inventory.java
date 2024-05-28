@@ -36,7 +36,7 @@ public class Inventory {
     @Column(name = "category", nullable = false)
     private String category;
 
-    @Column(name = "size", nullable = false)
+    @Column(name = "size")
     private Integer size;
 
     @ManyToOne
@@ -63,6 +63,9 @@ public class Inventory {
 
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
+
+    @Column(name = "p_quantity", nullable = false)
+    private Integer pQuantity;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy =  "inventory")
     private List<SalesDetails> salesDetails = new ArrayList<>();

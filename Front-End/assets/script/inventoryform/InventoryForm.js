@@ -1,6 +1,6 @@
 const inventoryfileInput = document.getElementById('inventory-file-input');
 const inventoryimagePreview = document.getElementById('inventory-image-preview');
-$('.inventorycode').attr('readonly', true);
+$('.inventorycode').attr('readonly', false);
 let selected = [];
 let AllInventory = [];
 let Inventory = {
@@ -146,7 +146,7 @@ function clearInventoryPopUpFormField(){
   $('.inventorycategory').prop('selectedIndex', 0).focus();
 }*/
 $(document).ready(function(){
-    $('.inventorycode').click(function(){
+    $('.inventorycode').dblclick(function(){
         $('#inventoryModal').modal('show');
     });
 
@@ -305,4 +305,11 @@ function inventoryImageToDefault(){
   inventoryimagePreview.innerHTML = '';
   inventoryimagePreview.appendChild(defaultImg);
   defaultImg.classList.add('inventorydefaultimg')
+}
+function setReponseInventoryImage(image){
+    const img = document.createElement('img');
+    const itemPic = 'data:image/jpg;base64,' + image;
+    inventoryimagePreview.innerHTML = '';
+    img.src = itemPic;
+    inventoryimagePreview.appendChild(img);
 }
