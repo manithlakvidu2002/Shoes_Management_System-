@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/Loging.css">
     <link rel="stylesheet" href="font/Heebo/stylesheet.css">
 
-
 </head>
 <body>
 <div class="ocean">
@@ -29,14 +28,17 @@
                 </div>
                 <span>Or use your Email for registration</span>
                 <label>
-                    <input type="text" placeholder="Name"/>
-                </label>
-                <label>
                     <input type="email" placeholder="Email"/>
                 </label>
                 <label>
                     <input type="password" placeholder="Password"/>
                 </label>
+                <select id="role" class="form-select" required>
+                    <option  disabled selected>Role</option>
+                    <option value="admin">ADMIN</option>
+                    <option value="user">USER</option>
+                </select>
+
                 <button style="margin-top: 9px"> Sign Up</button>
             </form>
         </div>
@@ -57,9 +59,6 @@
                 </label>
                 <a href="#">Forgot your password?</a>
                 <a href="pages/dashboard.html" id="loging">Sign In</a>
-
-
-
             </form>
         </div>
         <div class="overlay-container">

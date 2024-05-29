@@ -148,6 +148,17 @@ a {
 .form-container input:hover {
     transform: scale(101%);
 }
+#role {
+    background: #eee;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 81%;
+}
+#role:hover {
+    transform: scale(101%);
+}
 
 button {
     border-radius: 50px;
