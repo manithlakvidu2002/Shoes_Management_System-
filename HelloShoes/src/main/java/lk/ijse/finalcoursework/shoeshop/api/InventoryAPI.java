@@ -2,6 +2,7 @@ package lk.ijse.finalcoursework.shoeshop.api;
 
 import lk.ijse.finalcoursework.shoeshop.dto.EmployeeDTO;
 import lk.ijse.finalcoursework.shoeshop.dto.InventoryDTO;
+import lk.ijse.finalcoursework.shoeshop.dto.SalesInventoryDTO;
 import lk.ijse.finalcoursework.shoeshop.service.InventoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -70,5 +71,10 @@ public class InventoryAPI {
     @ResponseStatus(HttpStatus.ACCEPTED)
     InventoryDTO getInventory(@PathVariable("id") String id){
         return inventoryService.getInventoryDetails(id);
+    }
+
+    @GetMapping("/mostsaleitem")
+    List<InventoryDTO> getMostSaleInvetory(){
+        return inventoryService.getMostSaleItem();
     }
 }
