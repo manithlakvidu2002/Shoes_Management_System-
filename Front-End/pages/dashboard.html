@@ -28,6 +28,10 @@
 
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+
 </head>
 
 <body>
@@ -180,8 +184,8 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Monthly Sale</p>
+                                <h6 id="monthlyProfit" class="mb-0">1234</h6>
                             </div>
                         </div>
                     </div>
@@ -189,8 +193,8 @@
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Profit</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Weekly Profit</p>
+                                <h6 id="weeklyProfit" class="mb-0">1234</h6>
                             </div>
                         </div>
                     </div>
@@ -199,7 +203,7 @@
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Most Sale Item</p>
-                                <h6 class="mb-0">Nike</h6>
+                                <h6 class="mb-0" id="mostSaleItmDec">Nike</h6>
                             </div>
                         </div>
                     </div>
@@ -217,17 +221,27 @@
                                 <h6 class="mb-0">Picture of Most Sale Item</h6>
                             </div>
                             <div style="display: flex ; justify-content: space-evenly">
-                                <img src="../img/pair-trainers.jpg" alt="" style="height: 150px ;width: 150px" class="most-sale-item-pic">
+                                <div >
+                                    <img style="max-height: 150px" class="dashboardmostsaleshoepictures" src="../assets/img/DashBoard/img_1.png" alt="nikeshoe">
+                                </div>
                                 <div style="width: 250px">
                                     <div style="display: flex ;justify-content: space-evenly ; margin-bottom: 50px">
-                                        <h6>FSM00001</h6>
-                                        <h6>Formal Shoe</h6>
+                                        <h6 id="itemId">FSM00001</h6>
+                                        <h6 id="itemCategory">Formal Shoe</h6>
                                     </div>
-                                    <h6>Size - 10</h6>
-                                    <h6>Rs.2000.00</h6>
+                                    <div style="display: flex; flex-wrap: wrap; justify-content: space-around">
+                                        <div style="display: flex; flex-wrap: wrap">
+                                            <h6>Size - </h6>
+                                            <h6 id="sizeTxt"> 10</h6>
+                                        </div>
+                                        <div style="display: flex; flex-wrap: wrap">
+                                            <h6>Rs - </h6>
+                                            <h6 id="priceTxt">2000</h6>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-
                             <!--<canvas id="worldwide-sales"></canvas>-->
                         </div>
                     </div>
@@ -240,13 +254,14 @@
                             <div class="table-responsive">
                                 <div class="col-sm-5 col-xl-6 ">
                                     <div class="bg-light rounded h-100 p-4" style="padding-bottom: 0; padding-top: 0">
-                                        <table class="table table-borderless" style="width: 230%">
+                                        <table class="table table-borderless mostsaleshoedetailstable" style="width: 230%">
                                             <thead>
                                             <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Item Code</th>
-                                                <th scope="col">Item Desc</th>
-                                                <th scope="col">Qty</th>
+                                                <th scope="col">Id</th>
+                                                <th scope="col">Desc</th>
+                                                <th scope="col">Size</th>
+                                                <th scope="col">Quantity</th>
+                                                <th scope="col">Price(LKR)</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -290,64 +305,77 @@
                         <a href="">Show All</a>
                     </div>
                     <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0 recenetsaletable">
                             <thead>
                                 <tr class="text-dark">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
+                                    <!--<th scope="col"><input class="form-check-input" type="checkbox"></th>-->
                                     <th scope="col">Date</th>
                                     <th scope="col">Invoice</th>
                                     <th scope="col">Customer</th>
                                     <th scope="col">Amount</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
+                                    <!--<th scope="col">Action</th>-->
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
+                                    <!--<td><input class="form-check-input" type="checkbox"></td>-->
                                     <td>01 Jan 2045</td>
                                     <td>INV-0123</td>
                                     <td>Jhon Doe</td>
                                     <td>$123</td>
                                     <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                                    <!--<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>-->
                                 </tr>
                                 <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
+                                    <!--<td><input class="form-check-input" type="checkbox"></td>-->
                                     <td>01 Jan 2045</td>
                                     <td>INV-0123</td>
                                     <td>Jhon Doe</td>
                                     <td>$123</td>
                                     <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                                    <!--<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>-->
+                                </tr>
+
+                                <tr>
+                                    <!--<td><input class="form-check-input" type="checkbox"></td>-->
+                                    <td>01 Jan 2045</td>
+                                    <td>INV-0123</td>
+                                    <td>Jhon Doe</td>
+                                    <td>$123</td>
+                                    <td>Paid</td>
+                                    <!--<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>-->
                                 </tr>
                                 <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
+                                    <!--<td><input class="form-check-input" type="checkbox"></td>-->
                                     <td>01 Jan 2045</td>
                                     <td>INV-0123</td>
                                     <td>Jhon Doe</td>
                                     <td>$123</td>
                                     <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                                    <!--<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>-->
+                                </tr>
+
+                                <tr>
+                                    <!--<td><input class="form-check-input" type="checkbox"></td>-->
+                                    <td>01 Jan 2045</td>
+                                    <td>INV-0123</td>
+                                    <td>Jhon Doe</td>
+                                    <td>$123</td>
+                                    <td>Paid</td>
+                                    <!--<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>-->
                                 </tr>
                                 <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
+                                    <!--<td><input class="form-check-input" type="checkbox"></td>-->
                                     <td>01 Jan 2045</td>
                                     <td>INV-0123</td>
                                     <td>Jhon Doe</td>
                                     <td>$123</td>
                                     <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                                    <!--<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>-->
                                 </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
-                                    <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
-                                </tr>
+
+
                             </tbody>
                         </table>
                     </div>
@@ -391,8 +419,14 @@
 
     <!-- Template Javascript -->
     <script src="../js/main.js"></script>
+    <script src="../assets/script/saleform/SaleForm.js"></script>
+    <script src="../ajax/sale/Sale.js"></script>
+    <script src="../ajax/GlobalAttr.js"></script>
+    <script src="../ajax/employee/Employee.js"></script>
     <script src="../assets/script/dashboard/DashBoard.js"></script>
+    <script src="../ajax/dashboard/DashBoardAjax.js"></script>
 
-</body>
+    <!--<script src="../assets/script/inventoryform/InventoryForm.js"></script>
+--></body>
 
 </html>
