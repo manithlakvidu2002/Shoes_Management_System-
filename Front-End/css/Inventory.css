@@ -262,3 +262,16 @@ input[type="file"] {
     line-height: 20px;
 }
 
+.error-message {
+    margin-bottom: 1vh;
+    margin-left: 11vw;;
+    color: red;
+    display: none;
+    font-family: "Dongle", sans-serif;
+    font-size: 0.8em;
+    height: 0px;
+}
+.error-border {
+    border-color: red;
+}
+

@@ -115,12 +115,16 @@
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label labelfont">Email</label>
                                 <input type="email" class="form-control inputfont useremail" id="exampleFormControlInput1" placeholder="Enter Email">
+                                <div class="error-message useremail-error">Invalid email</div>
+
                             </div>
                         </div>
                         <div class="firstcontainersecondpart">
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label labelfont">Password</label>
                                 <input type="email" class="form-control inputfont userpassword" id="exampleFormControlInput1" placeholder="Enter Password">
+                                <div class="error-message userpassword-error">Invalid password</div>
+
                             </div>
                         </div>
                         <div class="firstcontainerthirdpart">
@@ -276,6 +280,8 @@
 <script src="../assets/script/jquery-3.7.1.min.js"></script>
 <script src="../ajax/GlobalAttr.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../validation/allform/AllValidation.js"></script>
+
 
 </body>
 </html>

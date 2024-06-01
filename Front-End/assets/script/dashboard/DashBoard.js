@@ -409,7 +409,7 @@ function sendEmail(to_email, name) {
     };
 
 
-    emailjs.send("service_2ytissp", "template_ztv7lwe", templateParams)
+    emailjs.send("service_2ytissp", "template_vc55t0r", templateParams)
         .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
                 alert('Email sent successfully!');

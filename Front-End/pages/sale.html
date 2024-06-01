@@ -121,6 +121,8 @@
                 <div class="col-md-4">
                     <label for="validationDefault01" class="form-label">Order No</label>
                     <input type="text" class="form-control saleorderno" id="validationDefault01" placeholder="Enter Order No" required>
+                    <div class="error-message saleorderno-error">Invalid order no</div>
+
                 </div>
                 <div class="col-md-4">
                     <label for="validationDefault" class="form-label">Customer Name</label>
@@ -129,6 +131,8 @@
                         <option></option>
                     </select>-->
                     <input type="text" class="form-control salecustomername" id="validationDefault" placeholder="Enter Order No" required>
+                    <div class="error-message salecustomername-error">Invalid customer name</div>
+
                 </div>
                 <div class="col-md-4">
                     <label  class="form-label">Item DESC</label>
@@ -140,7 +144,6 @@
                 </div>
                 <div class="col-md-4">
                     <label for="validationDefault02" class="form-label">Size</label>
-                    <input type="text" class="form-control saleitemsize"  placeholder="Enter Size" required>
                 </div>
                 <div class="col-md-4">
                     <label for="validationDefault02" class="form-label">Unit Price</label>
@@ -157,6 +160,8 @@
                 <div class="col-md-4">
                     <label for="inputEmail4" class="form-label">Total Price</label>
                     <input type="text" class="form-control saletotalprice" placeholder="Enter Total Price">
+                    <div class="error-message saletotalprice-error">Invalid total price</div>
+
                 </div>
                 <div class="col-md-4">
                     <label for="inputEmail4" class="form-label">Purchase date</label>
@@ -173,10 +178,14 @@
                 <div class="col-md-4">
                     <label for="inputPassword4" class="form-label">Add points</label>
                     <input type="number" class="form-control salepoints" id="inputPassword4" placeholder="Enter Points">
+                    <div class="error-message salepoints-error">Invalid add points</div>
+
                 </div>
                 <div class="col-md-4">
                     <label for="inputCity" class="form-label">Cashier Name</label>
                     <input type="text" class="form-control salecashiername" id="inputCity" placeholder="Enter Cashier Name">
+                    <div class="error-message salecashiername-error">Invalid cashier name</div>
+
                 </div>
                 <div class="col-md-4">
                     <label for="inputPassword4" class="form-label">Item Code</label>
@@ -322,6 +331,8 @@
 <script src="../assets/script/jquery-3.7.1.min.js"></script>
 <script src="../ajax/GlobalAttr.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../validation/allform/AllValidation.js"></script>
+
 
 </body>
 </html>

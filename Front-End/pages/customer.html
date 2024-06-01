@@ -114,9 +114,13 @@
                     <div class="col-md-6">
                         <h6 class="mb-3">Customer Code:</h6>
                         <input type="text" placeholder="Enter Customer Code" class="form-control mb-4 w-75 customercode">
+                        <div class="error-message customercode-error">Invalid Customer code</div>
+
 
                         <h6 class="mb-3">Customer Name:</h6>
                         <input type="text" placeholder="Enter Customer Name" class="form-control mb-4 w-75 customername">
+                        <div class="error-message customername-error">Invalid Customer Name</div>
+
 
 
 
@@ -146,6 +150,8 @@
 
                         <h6 class="mb-3">Total points:</h6>
                         <input type="text" id="customertotalpoints" class="form-control mb-4 w-75 customertotalpoints">
+                       <!-- <div class="error-message customertotalpoints-error">Invalid total point</div>-->
+
 
                         <h6 class="mb-3">DOB:</h6>
                         <input type="date" id="customerdob" class="form-control mb-4 w-75 customerdob">
@@ -157,24 +163,43 @@
                     <div class="col-md-6">
                         <h6 class="mb-3">Building NO:</h6>
                         <input type="text" id="customeraddressline01" placeholder="Enter Building NO" class="form-control mb-4 w-75 customeraddressline01">
+                        <div class="error-message customeraddressline01-error">Invalid building no</div>
+
 
                         <h6 class="mb-3">Lane:</h6>
                         <input type="text" id="customeraddressline02" placeholder="Enter Lane" class="form-control mb-4 w-75 customeraddressline02">
+                        <div class="error-message customeraddressline02-error">Invalid lane</div>
+
 
                         <h6 class="mb-3">Main City:</h6>
                         <input type="text" id="customeraddressline03" placeholder="Enter Main City" class="form-control mb-4 w-75 customeraddressline03">
+                        <div class="error-message customeraddressline03-error">Invalid Main city</div>
+
+
 
                         <h6 class="mb-3">Main State:</h6>
                         <input type="text" id="customeraddressline04" placeholder="Enter Main State" class="form-control mb-4 w-75 customeraddressline04">
+                        <div class="error-message customeraddressline04-error">Invalid Main State</div>
+
+
 
                         <h6 class="mb-3">Postal Code:</h6>
                         <input type="text" id="customeraddressline05" placeholder="Enter Postal Code" class="form-control mb-4 w-75 customeraddressline05">
+                        <div class="error-message customeraddressline05-error">Invalid Postal code</div>
+
+
 
                         <h6 class="mb-3">Contact No.:</h6>
                         <input type="text" id="customercontactno" placeholder="Enter Contact No" class="form-control mb-4 w-75 customercontactno">
+                        <div class="error-message customercontactno-error">Invalid contact no</div>
+
+
 
                         <h6 class="mb-3">Email:</h6>
                         <input type="text" id="customeremail" placeholder="Enter email" class="form-control mb-4 w-75 customeremail">
+                        <div class="error-message customeremail-error">Invalid email</div>
+
+
 
                         <div class="d-grid gap-2 d-md-flex my-5">
                             <button  class="btn btn-outline-primary me-md-2 customerdatasave" type="submit">Save</button>
@@ -249,6 +274,7 @@
     <script src="../assets/script/jquery-3.7.1.min.js"></script>
     <script src="../ajax/GlobalAttr.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../validation/allform/AllValidation.js"></script>
 
 </body>
 </html>
