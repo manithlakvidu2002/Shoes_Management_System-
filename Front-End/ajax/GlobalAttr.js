@@ -1,4 +1,4 @@
-var bearerToken = 'eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjpbeyJhdXRob3JpdHkiOiJSb2xlX1VTRVIifV0sInN1YiI6Imxha3ZpZHUwMEBnbWFpbC5jb20iLCJpYXQiOjE3MTcyMTQ3OTUsImV4cCI6MTcxNzMwMTE5NX0.dn5oVK4w9aYqqy8q90URNsXYqlCfdjizmzbu_YdT7SE';
+var bearerToken = localStorage.getItem('authToken');
 
 function showAlert(iconType,titleMessage,textMessage){
     Swal.fire({

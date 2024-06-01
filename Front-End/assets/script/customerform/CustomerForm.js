@@ -74,4 +74,8 @@ function dataToCustomerTable(customer){
               </tr>`;
 
     $(".customertable").append(row);
+    /*let Today = isDateToday(customer.dob);
+    if(Today){
+        sendEmail(customer.email,customer.customerName);
+    }*/
 }
